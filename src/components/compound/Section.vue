@@ -89,8 +89,16 @@ export default {
     height: 50%;
     margin-top: 17%;
   }
+  @keyframes sectionH {
+    0%   {box-shadow: 0 0 8px #38989A;}
+    30%  {box-shadow: 0 0 30px #6cf;}
+    50%  {box-shadow: 0 0 15px #6fc;}
+    75% {box-shadow: 0 0 30px #38989A;}
+    100% {box-shadow: 0 0 8px #38989A;}
+  }
   .section:hover {
-    box-shadow: 0 0 30px #38989A;
+    /*box-shadow: 0 0 30px #38989A;*/
     opacity: 0.8;
+    animation: sectionH 5s ease-in infinite;
   }
 </style>
