@@ -1,11 +1,15 @@
 <template>
   <div class="article-wrap">
-
+    <Section/>
   </div>
 </template>
 <script>
+import Section from './Section'
 export default {
-  name : 'ArticleWrap'
+  name : 'ArticleWrap',
+  components: {
+    Section
+  }
 }
 </script>
 <style scoped>

@@ -30,14 +30,14 @@ export default {
     Header,
     Markdown,
     ArticleWrap,
-    RightSidebar
+    RightSidebar,
   },
   methods: {
     mHandleMouseDown: function($event) {
-      let mdArea = this.$refs.mdArea
+      let mdArea  = this.$refs.mdArea
       // let mdHeader = this.$refs.mdHeader
-      let startX = $event.clientX-mdArea.offsetLeft
-      let startY = $event.clientY-mdArea.offsetTop
+      let startX  = $event.clientX-mdArea.offsetLeft
+      let startY  = $event.clientY-mdArea.offsetTop
       this.startX = startX
       this.startY = startY
       this.mdArea = mdArea
@@ -45,7 +45,7 @@ export default {
       console.log("objmdArea",mdArea.offsetTop)
       // console.log("mdheader",mdHeader)\
       this.mdArea.onmousemove = this.mHandleMouseMove
-      document.onmouseup = this.mHandleMouseUp
+      document.onmouseup      = this.mHandleMouseUp
     },
     mHandleMouseMove: function($event) {
       this.mdArea.style.left = $event.clientX-this.startX+"px"

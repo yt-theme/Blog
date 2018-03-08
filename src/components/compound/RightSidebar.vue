@@ -4,8 +4,9 @@
   </div>
 </template>
 <script>
+
 export default {
-  name: 'RightSidebar'
+  name: 'RightSidebar',
 }
 </script>
 <style scoped>

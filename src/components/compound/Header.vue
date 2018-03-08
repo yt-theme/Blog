@@ -6,8 +6,8 @@
       <li v-bind:class="{eventButtonActive : eventButton}">
         <a  href="#" v-on:click="MarkdownSlideout">Event</a>
       </li>
-      <li><a href="#">Github</a></li>
-      <li><a href="#">Gitbook</a></li>
+      <li><a href="https://github.com/yt-theme" target="view_window">Github</a></li>
+      <li><a href="https://github.com/yt-theme/MyGitBook" target="view_window">Gitbook</a></li>
       <li><a href="#">Project</a></li>
       <li><a href="#">About</a></li>
     </ul>
