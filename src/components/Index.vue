@@ -21,9 +21,9 @@ export default {
   name: 'Index',
   data() {
     return {
-      startX:0,
-      startY:0,
-      mdArea:null,
+      startX: 0,
+      startY: 0,
+      mdArea: null
     }
   },
   components: {
