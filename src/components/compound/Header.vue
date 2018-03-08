@@ -33,7 +33,7 @@ export default {
       this.eventButton = !this.eventButton
     },
     CreateHeaderTime() {
-      setInterval(()=>{
+      setInterval(() => {
           let time1 = new Date()
           let weekday = time1.getDay()
           switch(weekday) {
