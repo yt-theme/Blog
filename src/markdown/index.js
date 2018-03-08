@@ -9,6 +9,7 @@ const mk = [
   "```",
   "let a = 1",
   "```",
-  "> 20180308"
+  "> 20180308",
+  "> 原始版本 https://yt-theme.github.io/HelloWorld",
 ]
 export default mk
