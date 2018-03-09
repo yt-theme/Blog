@@ -1,10 +1,19 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
+import Vueaxios from 'vue-axios'
+Vue.use(Vueaxios,axios)
 Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     markdownArea: false,
     rightSidebarPop: false,
+    RightSidebarPopData: '',
+    weatherData: {
+      city: '110101', // adcode
+      type: 'base',  // base: 实况天气 all: 预报天气
+      details: []
+    },
     rightSidebarData: [
       {
         num: "0",
@@ -12,7 +21,10 @@ export default new Vuex.Store({
             article: [
                   "Blog更新记录",
                   "20180309正式更新",
-                  "主要为此侧边栏功能更新"
+                  "主要为此侧边栏功能更新",
+                  "",
+                  "新增天气",
+                  "暂只支持北京"
             ]
         }
       },
@@ -48,7 +60,6 @@ export default new Vuex.Store({
         }
       }
     ],
-    RightSidebarPopData: ''
   },
   mutations: {
     markdownAreaAction(state) {
@@ -60,6 +71,20 @@ export default new Vuex.Store({
     RightSidebarPopChange(state,d) {
       state.RightSidebarPopData = d
       // console.log('store',d);
+    },
+    weatherRequest() {
+      let req =  () => {
+          let frontTemp = 'http://restapi.amap.com/v3/weather/weatherInfo?'
+          const key = 'f9ebe1be7c473f3de4b281c9508efb30'
+          let city = this.state.weatherData.city
+          let extensions = this.state.weatherData.type
+          axios.get(`${frontTemp}&key=${key}&city=${city}&extensions=${extensions}`)
+          .then((res) => {
+            this.state.weatherData.details = res.data.lives[0]
+          })
+        }
+        req()
+        setInterval(req,540000)
     }
   }
 })

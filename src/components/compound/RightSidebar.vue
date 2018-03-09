@@ -8,12 +8,19 @@
         </li>
       </ul>
     </div>
+    <div class="weather">
+      <h3>城市: {{this.$store.state.weatherData.details.province}}
+        {{this.$store.state.weatherData.details.city}}</h3>
+      <h3>温度: {{this.$store.state.weatherData.details.temperature}}℃</h3>
+      <h3>天气: {{this.$store.state.weatherData.details.weather}}</h3>
+      <h3>风向: {{this.$store.state.weatherData.details.winddirection}}
+        {{this.$store.state.weatherData.details.windpower}}级</h3>
+    </div>
     <RightSidebarPop/>
   </div>
 </template>
 <script>
 import RightSidebarPop from './RightSidebarPop'
-// import articleData from '../../rightSidebarArticle'
 export default {
   name: 'RightSidebar',
   data () {
@@ -25,7 +32,6 @@ export default {
     LookDt: function ($event) {
       // send to pop
       let d = $event.target.parentNode.children[0].innerText
-      console.log('sidebar',d);
       this.$store.commit('RightSidebarPopChange',d)
       if (this.$store.state.rightSidebarPop === false) {
         this.$store.commit('rightSidebarPop')
@@ -34,6 +40,9 @@ export default {
   },
   components: {
     RightSidebarPop
+  },
+  created: function() {
+      this.$store.commit('weatherRequest')
   }
 }
 </script>
@@ -69,6 +78,7 @@ export default {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    line-height: 3em;
   }
   .articleList> h3 {
     color: #ccc;
@@ -77,8 +87,17 @@ export default {
   }
   .articleList> p {
     width: 80%;
-    color: #999;
-    text-shadow: 0 0 3px #666;
+    color: #ccc;
+    text-shadow: 0 0 8px #000;
     margin-left: 0.7em;
+  }
+  .weather {
+    height: 50%;
+    padding: 1.4em;
+  }
+  .weather> h3 {
+    line-height: 3em;
+    color: #ccc;
+    text-shadow: 0 0 3px #000;
   }
 </style>

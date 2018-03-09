@@ -2,8 +2,9 @@
   <div class="popWrap" v-bind:class="{popWrapActive : this.$store.state.rightSidebarPop}">
     <div>
       <div v-on:click="Close" class="popWrapClose"><i></i></div>
+        <h2>{{articleT}}</h2>
       <ul>
-        <li v-for='rspdata in this.$store.state.rightSidebarData[this.$store.state.RightSidebarPopData]'>
+        <li v-for='rspdata in article'>
           <template v-for='articleData in rspdata.article'>
             <p>{{articleData}}</p>
           </template>
@@ -30,7 +31,15 @@ export default {
     }
   },
   computed: {
-
+    article() {
+      let dataArr = this.$store.state.rightSidebarData[this.$store.state.RightSidebarPopData]
+      return dataArr
+    },
+    articleT() {
+      // let dataArr1 = this.$store.state.rightSidebarData[this.$store.state.RightSidebarPopData]
+      // let dataT = dataArr1.content.article[0]
+      // return dataT
+    }
   }
 }
 </script>
@@ -63,14 +72,21 @@ export default {
   height: 100%;
   overflow: auto;
 }
+.popWrap> div> h2 {
+  color: #ccc;
+  font-size: 1.4em;
+  text-align: center;
+}
 .popWrapActive {
   right: 25%;
 }
 .popWrap> div> ul {
+  margin-top: 1em;
   list-style: none;
 }
 .popWrap> div> ul> li {
   color: #838383;
+  line-height: 1.7;
 }
 .popWrapClose {
   position: absolute;
