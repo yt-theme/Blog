@@ -10,10 +10,12 @@
     </div>
     <ArticleWrap/>
     <RightSidebar/>
+    <Dock/>
   </div>
 </template>
 <script>
 import Header from './compound/Header'
+import Dock from './compound/Dock'
 import Markdown from './compound/Markdown'
 import ArticleWrap from './compound/ArticleWrap'
 import RightSidebar from './compound/RightSidebar'
@@ -31,6 +33,7 @@ export default {
     Markdown,
     ArticleWrap,
     RightSidebar,
+    Dock
   },
   methods: {
     mHandleMouseDown: function($event) {
