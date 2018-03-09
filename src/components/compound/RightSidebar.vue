@@ -59,6 +59,7 @@ export default {
   }
   .article {
     height: 50%;
+    max-height: 300px;
     min-height: 200px;
     border: 0px solid #04282C;
     overflow: auto;

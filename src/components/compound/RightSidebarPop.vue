@@ -52,6 +52,7 @@ export default {
   top: 15%;
   width: 50vw;
   height: 70vh;
+  max-height: 900px;
   background-color: #04282C;
   margin-right:1em;
   padding: 1em;
