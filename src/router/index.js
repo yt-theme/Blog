@@ -6,7 +6,7 @@ export default new VueRouter ({
   routes: [
     {
       path: '/',
-      components: Index,
+      component: Index,
       alias: '/index'
     }
   ]

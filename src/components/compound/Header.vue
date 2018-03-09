@@ -27,8 +27,6 @@ export default {
   },
   methods: {
     MarkdownSlideout() {
-      console.log('触发了Event, vuex',this.$store.state.markdownArea);
-      // console.log(this.$store.state.markdownArea);
       this.$store.commit('markdownAreaAction')
       this.eventButton = !this.eventButton
     },

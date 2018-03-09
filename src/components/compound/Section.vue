@@ -16,9 +16,6 @@ export default {
     return {
       sectionData : config.data
     }
-  },
-  mounted(){
-    console.log(this.sectionData)
   }
 }
 </script>
